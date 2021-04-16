@@ -1,6 +1,6 @@
-package com.company;
+package PrimitiveTypes;
 
-public class Main {
+public class ByteShortIntLongDoubleFloat {
 
     public static void main(String[] args) {
 
