@@ -1,4 +1,4 @@
-package PrimitiveTypes;
+package FirstSteps;
 
 public class CharAndBoolean {
     public static void main(String[] args) {
