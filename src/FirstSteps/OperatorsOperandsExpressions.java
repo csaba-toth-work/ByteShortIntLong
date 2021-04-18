@@ -41,9 +41,58 @@ public class OperatorsOperandsExpressions {
         result -= 2; // 10 - 2 = 8
         System.out.println("10 - 2 = " + result);
 
+        //>,<,<=, >=, ==, !=
         boolean isAlien = false;
         if (isAlien == false) {
             System.out.println("It is not an alien");
+        }
+
+        int topScore = 80;
+        if (topScore != 100) {
+            System.out.println("You got the high score!");
+        }
+
+        if (topScore >= 100) {
+            System.out.println("You got the high score!");
+        }
+
+        int secondTopScore = 81;
+        if ((topScore > secondTopScore) && (topScore < 100)) {
+            System.out.println("Greater than second top score and less than 100");
+        }
+
+        if ((topScore > 90) || (secondTopScore <= 90)) {
+            System.out.println("Either or both of the conditions are true");
+        }
+
+        int newValue = 50;
+        if (newValue == 50) {
+            System.out.println("This is true");
+        }
+
+        boolean isCar = false;
+        if (!isCar) {
+            System.out.println("This is not supposed to happen");
+        }
+
+        // ternary operator
+        isCar = true;
+        boolean wasCar = isCar ? true : false;
+        if (wasCar) {
+            System.out.println("wasCar is true");
+        }
+
+        // Challenge
+        double firstValue = 20.00d;
+        double secondValue = 80.00d;
+        double thirdValue = (firstValue + secondValue) * 100.00d;
+        System.out.println("thirdValue " + thirdValue);
+        double fourthValue = thirdValue % 40.00d;
+        boolean fifthValue = fourthValue == 0 ? true : false;
+        System.out.println("fifthValue " + fifthValue);
+
+        if (!fifthValue){
+            System.out.println("Got some remainder");
         }
     }
 }
