@@ -1,4 +1,4 @@
-package Arraylists.ArrayListChallenge;
+package DataStructures.Arraylists.ArrayListChallenge;
 
 import java.util.ArrayList;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package Arraylists.ArrayListChallenge;
+package DataStructures.Arraylists.ArrayListChallenge;
 
 public class Main {
 
