@@ -1,4 +1,4 @@
-package DataStructures.LinkedLists;
+package DataStructures.LinkedLists.Challenge2;
 
 import java.util.LinkedList;
 import java.util.ListIterator;
@@ -45,9 +45,9 @@ public class Playlist {
         }
     }
 
-    public void forward () {
+    public void forward() {
         ListIterator<Song> songListIterator = songs.listIterator();
-        if(!goingForward) {
+        if (!goingForward) {
             if (songListIterator.hasNext()) {
                 songListIterator.next();
                 goingForward = true;
@@ -62,7 +62,7 @@ public class Playlist {
 
     public void backwards() {
         ListIterator<Song> songListIterator = songs.listIterator();
-        if(goingForward) {
+        if (goingForward) {
             if (songListIterator.hasNext()) {
                 songListIterator.next();
                 goingForward = false;

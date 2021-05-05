@@ -1,4 +1,4 @@
-package DataStructures.LinkedLists;
+package DataStructures.LinkedLists.Challenge2;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package DataStructures.LinkedLists;
+package DataStructures.LinkedLists.Challenge2;
 
 public class Song {
     private String title;
