@@ -17,7 +17,7 @@ public class StockList {
             StockItem inStock = list.getOrDefault(item.getName(), item);
             // if there are already stocks on this item, adjust the quantity
             if (inStock != item) {
-                item.adjustReservedStock(inStock.availableQuantity());
+                item.adjustStock(inStock.availableQuantity());
             }
 
             list.put(item.getName(), item);
@@ -26,12 +26,29 @@ public class StockList {
         return 0;
     }
 
-    public int sellStock(String item, int quantity) {
-        StockItem inStock = list.getOrDefault(item, null);
+    public int reserveStock(String item, int quantity) {
+        StockItem inStock = list.get(item);
 
-        if ((inStock != null) && (inStock.availableQuantity() >= quantity) && (quantity > 0)) {
-            inStock.adjustReservedStock(-quantity);
-            return quantity;
+        if ((inStock != null) && (quantity > 0)) {
+            return inStock.reserveStock(quantity);
+        }
+        return 0;
+    }
+
+    public int unreserveStock(String item, int quantity) {
+        StockItem inStock = list.get(item);
+
+        if ((inStock != null) && (quantity > 0)) {
+            return inStock.unreserveStock(quantity);
+        }
+        return 0;
+    }
+
+    public int sellStock(String item, int quantity) {
+        StockItem inStock = list.get(item);
+
+        if ((inStock != null) && (quantity > 0)) {
+            return inStock.finaliseStock(quantity);
         }
         return 0;
     }
@@ -41,7 +58,7 @@ public class StockList {
     }
 
     public Map<String, Double> priceList() {
-        Map<String, Double> prices =  new LinkedHashMap<>();
+        Map<String, Double> prices = new LinkedHashMap<>();
         for (Map.Entry<String, StockItem> item : list.entrySet()) {
             prices.put(item.getKey(), item.getValue().getPrice());
         }

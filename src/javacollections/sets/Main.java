@@ -8,7 +8,7 @@ import java.util.Set;
 public class Main {
 
     private static Map<String, HeavenlyBody> solarSystem = new HashMap<>();
-    private static Set<HeavenlyBody> planets =  new HashSet<>();
+    private static Set<HeavenlyBody> planets = new HashSet<>();
 
     public static void main(String[] args) {
 
@@ -20,7 +20,7 @@ public class Main {
         solarSystem.put(temp.getName(), temp);
         planets.add(temp);
 
-        temp = new HeavenlyBody("Earth",365);
+        temp = new HeavenlyBody("Earth", 365);
         solarSystem.put(temp.getName(), temp);
         planets.add(temp);
 
@@ -28,51 +28,51 @@ public class Main {
         solarSystem.put(tempMoon.getName(), tempMoon);
         temp.addMoon(tempMoon);
 
-        temp = new HeavenlyBody("Mars",687);
+        temp = new HeavenlyBody("Mars", 687);
         solarSystem.put(temp.getName(), temp);
         planets.add(temp);
 
-        tempMoon = new HeavenlyBody("Deimos",1.3);
+        tempMoon = new HeavenlyBody("Deimos", 1.3);
         solarSystem.put(temp.getName(), tempMoon);
         planets.add(tempMoon);
 
-        tempMoon = new HeavenlyBody("Phobos",0.3);
+        tempMoon = new HeavenlyBody("Phobos", 0.3);
         solarSystem.put(temp.getName(), tempMoon);
         planets.add(tempMoon);
 
-        temp = new HeavenlyBody("Jupiter",4332);
+        temp = new HeavenlyBody("Jupiter", 4332);
         solarSystem.put(temp.getName(), temp);
         planets.add(temp);
 
-        tempMoon = new HeavenlyBody("IO",1.8);
+        tempMoon = new HeavenlyBody("IO", 1.8);
         solarSystem.put(temp.getName(), tempMoon);
         planets.add(tempMoon);
 
-        tempMoon = new HeavenlyBody("Europa",3.5);
+        tempMoon = new HeavenlyBody("Europa", 3.5);
         solarSystem.put(temp.getName(), tempMoon);
         planets.add(tempMoon);
 
-        tempMoon = new HeavenlyBody("Ganymede",7.1);
+        tempMoon = new HeavenlyBody("Ganymede", 7.1);
         solarSystem.put(temp.getName(), tempMoon);
         planets.add(tempMoon);
 
-        tempMoon = new HeavenlyBody("Callisto",16.7);
+        tempMoon = new HeavenlyBody("Callisto", 16.7);
         solarSystem.put(temp.getName(), tempMoon);
         planets.add(tempMoon);
 
-        temp = new HeavenlyBody("Saturn",10759);
+        temp = new HeavenlyBody("Saturn", 10759);
         solarSystem.put(temp.getName(), temp);
         planets.add(temp);
 
-        temp = new HeavenlyBody("Uranus",30660);
+        temp = new HeavenlyBody("Uranus", 30660);
         solarSystem.put(temp.getName(), temp);
         planets.add(temp);
 
-        temp = new HeavenlyBody("Neptune",165);
+        temp = new HeavenlyBody("Neptune", 165);
         solarSystem.put(temp.getName(), temp);
         planets.add(temp);
 
-        temp = new HeavenlyBody("Pluto",248);
+        temp = new HeavenlyBody("Pluto", 248);
         solarSystem.put(temp.getName(), temp);
         planets.add(temp);
 
@@ -97,7 +97,7 @@ public class Main {
             System.out.println("\t" + moon.getName());
         }
 
-        HeavenlyBody pluto  = new HeavenlyBody("Pluto", 842);
+        HeavenlyBody pluto = new HeavenlyBody("Pluto", 842);
         planets.add(pluto);
 
         for (HeavenlyBody planet : planets) {
