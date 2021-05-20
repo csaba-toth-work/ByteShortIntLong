@@ -1,4 +1,4 @@
-package basicinputandoutput.exceptions.nio;
+package basicinputandoutput.readingandwriting.nio;
 
 public class ShiftInt {
     private static final String ANSI_RESET = "\u001B[0m";

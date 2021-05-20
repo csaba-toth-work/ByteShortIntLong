@@ -1,4 +1,4 @@
-package basicinputandoutput.exceptions.advanturegamewithrandomaccesfile;
+package basicinputandoutput.readingandwriting.advanturegamewithrandomaccesfile;
 
 public class IndexRecord {
     private int startByte;

@@ -1,4 +1,4 @@
-package basicinputandoutput.exceptions.nio;
+package basicinputandoutput.readingandwriting.nio;
 
 import java.io.Serializable;
 import java.util.LinkedHashMap;

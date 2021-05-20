@@ -1,4 +1,4 @@
-package basicinputandoutput.exceptions.nio;
+package basicinputandoutput.readingandwriting.nio;
 
 import java.util.HashMap;
 import java.util.Map;
