@@ -1,5 +1,8 @@
 package basicinputandoutput.filesystems.examples;
 
+import basicinputandoutput.filesystems.examples.dir2.PrintNames;
+import basicinputandoutput.filesystems.examples.dir2.dir3.CopyFiles;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
@@ -42,13 +45,61 @@ public class Main {
 
         Iterable<FileStore> stores = FileSystems.getDefault().getFileStores();
         for (FileStore store : stores) {
-            System.out.println(store);
-            System.out.println(store.name());
+            System.out.println("Volume name/Drive letter = " + store);
+            System.out.println("file store = " + store.name());
         }
         System.out.println("**********************");
         Iterable<Path> rootPaths = FileSystems.getDefault().getRootDirectories();
         for (Path path : rootPaths) {
             System.out.println(path);
+        }
+
+        System.out.println("---Walking Tree for Dir2 ---");
+        Path dir2Path = FileSystems.getDefault().getPath("FileTree" + File.separator + "Dir2");
+        try {
+            Files.walkFileTree(dir2Path, new PrintNames());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("----Copy Dir2 to Dir4/Dir2Copy---");
+        Path copyPath  = FileSystems.getDefault().getPath("FileTree" + File.separator + "Dir4" + File.separator + "Dir2Copy");
+        // FileTree/Dir4/Dir2Copy
+        try {
+            Files.walkFileTree(dir2Path, new CopyFiles(dir2Path, copyPath));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        File file = new File("/Examples/file.txt");
+        Path convertedPath = file.toPath();
+        System.out.println("convertedPath = " + convertedPath);
+
+        File parent =  new File("/Examples");
+        File resolvedFile = new File(parent, "dir/file.txt");
+        System.out.println(resolvedFile.toPath());
+
+        resolvedFile = new File("/Examples", "dir/file.txt");
+        System.out.println(resolvedFile.toPath());
+
+        Path parentPath = Paths.get("/Examples");
+        Path childRelativePath = Paths.get("dir/file.txt");
+        System.out.println(parentPath.resolve(childRelativePath));
+
+        File workingDirectory = new File("").getAbsoluteFile();
+        System.out.println("Working directory = " + workingDirectory.getAbsolutePath());
+
+        System.out.println("---- print Dir1 contents using () ---");
+        File dir2File = new File(workingDirectory, "/FileTree/Dir2");
+        String[] dir2Contents = dir2File.list();
+        for (int i = 0; i < dir2Contents.length; i++) {
+            System.out.println("i = " + i + ": " + dir2Contents[i]);
+        }
+
+        System.out.println("--- print Dir2 contents using listFiles() ---");
+        File[] dir2Files = dir2File.listFiles();
+        for (int i = 0; i < dir2Files.length; i++) {
+            System.out.println("i = " + i + ": " + dir2Files[i].getName());
         }
     }
 }
